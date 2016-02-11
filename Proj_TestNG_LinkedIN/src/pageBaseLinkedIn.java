@@ -41,6 +41,9 @@ public class pageBaseLinkedIn {
 	@FindBy(css="a[href*='nav_responsive_tab_profile']")
 	public WebElement lnkMenuProfile;
 	
+	
+	// ********** MAIN MENU: My Network *****************
+
 	//Locator Menu: My Network 
 	//@FindBy(css="a[href*='nav_responsive_tab_network']")
 	@FindBy(id="nav-link-network")
@@ -49,12 +52,23 @@ public class pageBaseLinkedIn {
 	//Locator Sub Menu: Connections 
 	//@FindBy(css="a[href*='nav_responsive_tab_network']")
 	@FindBy(css="a[href*='nav_responsive_sub_nav_network']")
-	public WebElement lnkMenuConnections;	
+	public WebElement lnkSubMenuConnections;	
 	
+	//Locator Sub Menu: Add Contacts 
+	@FindBy(css="a[href*='nav_responsive_sub_nav_add_connections']")
+	public WebElement lnkSubMenuAddContact;	
+	
+	
+	
+	// ********** MAIN MENU: Jobs *****************
+
 	//Locator Menu: Jobs
 	@FindBy(css="a[href*='nav_responsive_sub_nav_jobs']")
 	public WebElement lnkMenuJobs;		
 		
+
+	// ********** MAIN MENU: Interests *****************
+	
 	//Locator Menu: Interests 
 	@FindBy(id="nav-link-interests")
 	public WebElement lnkMenuInterests;	
@@ -63,6 +77,9 @@ public class pageBaseLinkedIn {
 	@FindBy(css="a[href*='nav_responsive_sub_nav_companies']")
 	public WebElement lnkMenuInterestsCompanies;	
 	
+	
+	
+	// ********** MAIN MENU: Account - Settings *****************	
 	
     //Locator Menu: Account-Settings Main Menu  
 	@FindBy(css="a[href*='nav_responsive_tab_profile_pic']")
@@ -103,11 +120,20 @@ public class pageBaseLinkedIn {
 	public void clickLinkConnections(WebDriver driver){
 		Actions builder = new Actions(driver);
 		builder.moveToElement(lnkMenuNetwork).click().build().perform();
-		lnkMenuConnections.click();
+		lnkSubMenuConnections.click();
 		
 		// Wait for page to completely load ... how?
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	}
+	
+	//Method: Click Network Menu: Sub Menu: Add Contacts 
+	public void clickSubAddContact(WebDriver driver){
+		Actions builder = new Actions(driver);
+		builder.moveToElement(lnkMenuNetwork).click().build().perform();
+		lnkSubMenuAddContact.click();
 		
+		// Wait for page to completely load ... how?
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
 
 	//Method: Click Menu: Jobs 
@@ -151,10 +177,5 @@ public class pageBaseLinkedIn {
 		lnkMenuSettingsSignOut.click();
 	}
 	
-
-	public void lnkMenuConnections() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 }
