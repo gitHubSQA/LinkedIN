@@ -74,14 +74,14 @@ public class Test_SmokeTest{
 	
 	@Test (priority=4)
 	public void POS_Test_SelectConnections(){
-		pagemenu.clickLinkConnections();	
+		pagemenu.clickLinkConnections(driver);	
 		Assert.assertEquals(driver.getTitle(), "Contacts | LinkedIn");
 
 	}
 	
 	@Test (priority=5)
 	public void POS_Test_SelectHome(){
-		pagemenu.clickLinkMenuHome();	
+		pagemenu.clickLinkMenuHome(driver);	
 		Assert.assertEquals(driver.getTitle(), "Welcome! | LinkedIn");
 
 	}
@@ -89,9 +89,9 @@ public class Test_SmokeTest{
 	@Test (priority=6)
 	public void POS_Test_SelectInterests(){
 		//STEP 1: Select Interests
-		pagemenu.clickLinkInterests();	
+		pagemenu.clickLinkInterests(driver);	
 		//STEP 2: Select Companies from the sub-menu
-		pagemenu.clickLinkInterestsCompanies();
+		pagemenu.clickLinkInterestsCompanies(driver);
 		//VALIDATION: Title Page
 		Assert.assertEquals(driver.getTitle(), "Companies | LinkedIn");;
 
@@ -101,7 +101,7 @@ public class Test_SmokeTest{
 	public void POS_Test_SignOut(){
 		
 		pagemenu.clickLinkMenuSettings(driver);
-		pagemenu.clickLinkMenuSettingsSignOut();
+		pagemenu.clickLinkMenuSettingsSignOut(driver);
 		Assert.assertEquals(driver.getTitle(), "Signed Out | LinkedIn");
 	
 	}

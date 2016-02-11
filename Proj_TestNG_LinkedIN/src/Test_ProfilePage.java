@@ -203,12 +203,12 @@ public class Test_ProfilePage {
 	@AfterClass
 	public void closeBrowser(){
 		//Return to Base State
-		pageMenu.clickLinkMainLogo();
+		pageMenu.clickLinkMainLogo(driver);
 		
 		//Sign Out
 		pagemenu.clickLinkMenuSettings(driver);
 		//pagemenu.selectLinkMenuSettingsSignOut();
-		pagemenu.clickLinkMenuSettingsSignOut();
+		pagemenu.clickLinkMenuSettingsSignOut(driver);
 		Assert.assertEquals(driver.getTitle(), "Signed Out | LinkedIn");
 		
 		//Clean and Close Browser

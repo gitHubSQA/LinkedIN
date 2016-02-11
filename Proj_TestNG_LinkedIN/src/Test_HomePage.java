@@ -81,7 +81,7 @@ public class Test_HomePage {
 	@Test(priority=2)
 	public void POS_Test_SelectHome(){
 		//STEP 1:
-		pageMenu.clickLinkMenuHome();	
+		pageMenu.clickLinkMenuHome(driver);	
 		//VALIDATION: Link Enabled
 		Assert.assertTrue(pageMenu.lnkMenuHome.isEnabled());
 	}
@@ -90,7 +90,7 @@ public class Test_HomePage {
 	@Test(priority=3)
 	public void POS_Test_Home_Title(){
 		//STEP 1:
-		pageMenu.clickLinkMenuHome();	
+		pageMenu.clickLinkMenuHome(driver);	
 		//VALIDATION: Title
 		Assert.assertEquals(driver.getTitle(), "Welcome! | LinkedIn");
 	}
@@ -99,7 +99,7 @@ public class Test_HomePage {
 	@Test(priority=4)
 	public void POS_Test_Home_Identity(){
 		//STEP 1:
-		pageMenu.clickLinkMenuHome();	
+		pageMenu.clickLinkMenuHome(driver);	
 		//VALIDATION: Title
 		Assert.assertEquals(pageHome.txtIdentity.getText(), "Jefry Denny");
 	}
@@ -108,7 +108,7 @@ public class Test_HomePage {
 	@Test(priority=5)
 	public void POS_Test_Home_ShareUpdate(){
 		//STEP 1:
-		pageMenu.clickLinkMenuHome();	
+		pageMenu.clickLinkMenuHome(driver);	
 		//STEP 2:
 		pageHome.clickBtnShareUpdate();
 		//VALIDATION: Textarea is displayed
@@ -119,7 +119,7 @@ public class Test_HomePage {
 	@Test(priority=6)
 	public void POS_Test_Home_UploadPhoto(){
 		//STEP 1:
-		pageMenu.clickLinkMenuHome();	
+		pageMenu.clickLinkMenuHome(driver);	
 		//STEP 2:
 		//pageHome.clickBtnUploadPhoto();
 		//VALIDATION: isEnabled
@@ -141,7 +141,7 @@ public class Test_HomePage {
 	@Test(priority=7)
 	public void POS_Test_Home_PublishPost(){
 		//STEP 1:
-		pageMenu.clickLinkMenuHome();	
+		pageMenu.clickLinkMenuHome(driver);	
 		//STEP 2: 
 		pageHome.clickBtnPublishPost();
 		//VALIDATION: Title
@@ -152,7 +152,7 @@ public class Test_HomePage {
 	@Test(priority=8, enabled = true)
 	public void POS_Test_Home_PublishPost_Headline_TextArea(){
 		//STEP 1:
-		pageMenu.clickLinkMenuHome();	
+		pageMenu.clickLinkMenuHome(driver);	
 		//STEP 2:
 		pageHome.clickBtnPublishPost();
 		//VALIDATION: Tag is displayed
@@ -171,7 +171,7 @@ public class Test_HomePage {
 		iCounter++;
 		
 		//Return to Base State
-		pageMenu.clickLinkMainLogo();
+		pageMenu.clickLinkMainLogo(driver);
 		
 	}
 	

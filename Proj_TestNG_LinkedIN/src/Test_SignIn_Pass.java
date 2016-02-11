@@ -60,7 +60,7 @@ public class Test_SignIn_Pass{
 	@Test (priority=2, enabled = false)
 	public void POS_Test_SignOut(){
 		pagemenu.clickLinkMenuSettings(driver);
-		pagemenu.clickLinkMenuSettingsSignOut();
+		pagemenu.clickLinkMenuSettingsSignOut(driver);
 		
 		Assert.assertEquals(driver.getTitle(), "Signed Out | LinkedIn");
 	}

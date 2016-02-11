@@ -3,9 +3,12 @@
 // Created By: Jefry Denny
 // Created On: January 14, 2016
 // Last Update By: Jefry Denny
-// Last Update On: January 14, 2016 
+// Last Update On: February 11, 2016 
+// Last Update:    Added function to hover over Main Menu: My Network and click Sub-Menu: Connections
 // ---------------------------------------------------------------------------------------------------------------
 
+
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,8 +26,11 @@ public class pageBaseLinkedIn {
 	
 	// -------------- Properties -------------------------
 	
+	boolean iFlag = false;
+	
 	//Locator Logo: LinkedIn Logo 
-	@FindBy(css="a[href*='nav_logo']")
+	//@FindBy(css="a[href*='nav_logo']")
+	@FindBy(id="in-logo")
 	public WebElement lnkMainLogo;
 	
 	//Locator Menu: Home 
@@ -35,8 +41,14 @@ public class pageBaseLinkedIn {
 	@FindBy(css="a[href*='nav_responsive_tab_profile']")
 	public WebElement lnkMenuProfile;
 	
-	//Locator Menu: Connections 
-	@FindBy(css="a[href*='nav_responsive_tab_network']")
+	//Locator Menu: My Network 
+	//@FindBy(css="a[href*='nav_responsive_tab_network']")
+	@FindBy(id="nav-link-network")
+	public WebElement lnkMenuNetwork;	
+	
+	//Locator Sub Menu: Connections 
+	//@FindBy(css="a[href*='nav_responsive_tab_network']")
+	@FindBy(css="a[href*='nav_responsive_sub_nav_network']")
 	public WebElement lnkMenuConnections;	
 	
 	//Locator Menu: Jobs
@@ -65,17 +77,18 @@ public class pageBaseLinkedIn {
 	
 	
 	//Method: Click Main Logo 
-		public void clickLinkMainLogo(){
+		public void clickLinkMainLogo(WebDriver driver){
 			while (!lnkMainLogo.isDisplayed()){	
-				lnkMainLogo.click();
+				driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 			}
 				lnkMainLogo.click();
+
 		}
 	
 	//Method: Click Menu: Home 
-	public void clickLinkMenuHome(){
+	public void clickLinkMenuHome(WebDriver driver){
 		while (!lnkMenuHome.isDisplayed()){	
-			lnkMenuHome.click();
+			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		}
 		
 		lnkMenuHome.click();
@@ -86,26 +99,39 @@ public class pageBaseLinkedIn {
 		lnkMenuProfile.click();
 	}
 	
-	//Method: Click Menu: Connections 
-	public void clickLinkConnections(){
+	//Method: Click Network Menu: Sub Menu: Connections 
+	public void clickLinkConnections(WebDriver driver){
+		Actions builder = new Actions(driver);
+		builder.moveToElement(lnkMenuNetwork).click().build().perform();
 		lnkMenuConnections.click();
+		
+		// Wait for page to completely load ... how?
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
 	}
-	
+
 	//Method: Click Menu: Jobs 
 	public void clickLinkJobs(){
 		lnkMenuJobs.click();
 	}
 	
 	//Method: Click Menu: Interests 
-	public void clickLinkInterests(){
-		while(lnkMenuInterests.isDisplayed()){
-			lnkMenuInterests.click();
+	public void clickLinkInterests(WebDriver driver){
+		while(! lnkMenuInterests.isDisplayed()){
+			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		}
+		
+		Actions builder = new Actions(driver);
+		builder.moveToElement(lnkMenuInterests).click().build().perform();	
+		lnkMenuInterests.click();
+		
+		iFlag = true;
+				
 	}
 	
 	//Method: Click Interests Menu: Companies 
-	public void clickLinkInterestsCompanies(){
-		lnkMenuInterestsCompanies.click();
+	public void clickLinkInterestsCompanies(WebDriver driver){
+			lnkMenuInterestsCompanies.click();
 	}
 	
 	//Method: Click Account-Settings Menu 
@@ -114,16 +140,21 @@ public class pageBaseLinkedIn {
 		builder.moveToElement(lnkMenuSettings).click().build().perform();	
 	}
 	
-	//Method: Click Account-Settings Menu 
-	public void clickLinkMenuSettingsSignOut(){
-		while(lnkMenuSettingsSignOut.isEnabled()){
-			lnkMenuSettingsSignOut.click();
+	//Method: Click Account-Settings Menu -> Sign Out
+	public void clickLinkMenuSettingsSignOut(WebDriver driver){
+		while(! lnkMenuSettings.isDisplayed()){
+			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		}
+		
+		Actions builder = new Actions(driver);
+		builder.moveToElement(lnkMenuSettings).click().build().perform();	
+		lnkMenuSettingsSignOut.click();
 	}
 	
-	//Method: Click Account-Settings Menu 
-	public void selectLinkMenuSettingsSignOut(){
-		lnkMenuSettingsSignOut.isSelected();
+
+	public void lnkMenuConnections() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
