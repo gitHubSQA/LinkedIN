@@ -9,15 +9,22 @@
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -143,40 +150,51 @@ public class Test_HomePage {
 		//STEP 1:
 		pageMenu.clickLinkMenuHome(driver);	
 		//STEP 2: 
-		pageHome.clickBtnPublishPost();
+		pageHome.clickBtnPublishPost(driver);
 		//VALIDATION: Title
 		Assert.assertEquals(driver.getTitle(), "Create a New Post | LinkedIn");				
 	}
 	
 	// Test: 
 	@Test(priority=8, enabled = true)
-	public void POS_Test_Home_PublishPost_Headline_TextArea(){
+	public void POS_Test_Home_PublishPost_Tag_TextArea(){
 		//STEP 1:
 		pageMenu.clickLinkMenuHome(driver);	
 		//STEP 2:
-		pageHome.clickBtnPublishPost();
+		pageHome.clickBtnPublishPost(driver);
 		//VALIDATION: Tag is displayed
-		//Assert.assertTrue(pagePost.picPillTag.isDisplayed());
-		Assert.assertTrue(true);	
+		Assert.assertTrue(pagePost.picPillTag.isDisplayed());
 	}
 		
 
 	@AfterMethod
-	public void displayCounter(){
+	public void displayCounter(ITestResult testResult) throws IOException{
 		//This is some sort of a delay - it helps the script to pass due to sync issue.
 		//I need to find a better handler **************
-		//System.out.println("Test Start ... ");
 
+		if(testResult.getStatus() == ITestResult.FAILURE){
+			System.out.println("Test_" + Integer.toString(iCounter) + " -- FAILED: " + testResult.getStatus());
+			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(scrFile, new File("C:\\FAIL_"  + testResult.getName() + "_testScreenshot.jpg"));
+		}
+		
 		System.out.println(Integer.toString(iCounter) + "- Test Completed");
 		iCounter++;
 		
+		//BASE STATE: Go Back
+		pageMenu.clickLinkMainLogo(driver);
+	}
+	
+	@AfterClass
+	public void closeBrowser(){
 		//Return to Base State
 		pageMenu.clickLinkMainLogo(driver);
 		
-	}
-	
-	@AfterSuite
-	public void closeBrowser(){
+		//Sign Out
+		pageMenu.clickLinkMenuSettingsSignOut(driver);
+		Assert.assertEquals(driver.getTitle(), "Signed Out | LinkedIn");
+		
+		//Clean and Close Browser
 		driver.manage().deleteAllCookies();
 		driver.close();
 	}

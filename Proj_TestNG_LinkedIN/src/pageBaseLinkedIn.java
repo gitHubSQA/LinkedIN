@@ -28,8 +28,11 @@ public class pageBaseLinkedIn {
 	
 	boolean iFlag = false;
 	
+	// -----------------------------------------------------------------------------------------------------------------------------------------
+	// -------------------------------- LOCATORS -----------------------------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------------------------------------------------------------
+	
 	//Locator Logo: LinkedIn Logo 
-	//@FindBy(css="a[href*='nav_logo']")
 	@FindBy(id="in-logo")
 	public WebElement lnkMainLogo;
 	
@@ -37,20 +40,27 @@ public class pageBaseLinkedIn {
 	@FindBy(css="a[href*='nav_responsive_tab_home']")
 	public WebElement lnkMenuHome;
 	
-	//Locator Menu: Profile 
+	// ********** MAIN MENU: Profile *****************
+	
+	//Locator MAIN Menu: Profile 
 	@FindBy(css="a[href*='nav_responsive_tab_profile']")
 	public WebElement lnkMenuProfile;
 	
+	//Locator SUB-Menu: Edit Profile 
+	@FindBy(css="a[href*='nav_responsive_sub_nav_edit_profile']")
+	public WebElement lnkSubMenuEditProfile;
+	
+	//Locator SUB-Menu: Who's Viewed Your Profile
+	@FindBy(css="a[href*='nav_responsive_sub_nav_wvmp']")
+	public WebElement lnkViewedProfile;	
 	
 	// ********** MAIN MENU: My Network *****************
 
-	//Locator Menu: My Network 
-	//@FindBy(css="a[href*='nav_responsive_tab_network']")
+	//Locator MAIN Menu: My Network 
 	@FindBy(id="nav-link-network")
 	public WebElement lnkMenuNetwork;	
 	
-	//Locator Sub Menu: Connections 
-	//@FindBy(css="a[href*='nav_responsive_tab_network']")
+	//Locator SUB-Menu: Connections 
 	@FindBy(css="a[href*='nav_responsive_sub_nav_network']")
 	public WebElement lnkSubMenuConnections;	
 	
@@ -90,35 +100,68 @@ public class pageBaseLinkedIn {
 	public WebElement lnkMenuSettingsSignOut;	
 
 	
-	// -------------- Methods -------------------------
-	
+	// -----------------------------------------------------------------------------------------------------------------------------------------
+	// -------------------------------- METHODS ------------------------------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------------------------------------------------------------
 	
 	//Method: Click Main Logo 
 		public void clickLinkMainLogo(WebDriver driver){
-			while (!lnkMainLogo.isDisplayed()){	
+			while (! lnkMainLogo.isEnabled()){	
 				driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 			}
 				lnkMainLogo.click();
 
 		}
 	
-	//Method: Click Menu: Home 
+	//Method: Click MAIN Menu: HOME 
 	public void clickLinkMenuHome(WebDriver driver){
-		while (!lnkMenuHome.isDisplayed()){	
+		while (! lnkMenuHome.isDisplayed()){	
 			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		}
 		
 		lnkMenuHome.click();
 	}
 	
-	//Method: Click Menu: Profile 
+	
+	//------------------------------------------------------------------------------------------------------------
+	// MAIN MENU: PROFILE
+	//------------------------------------------------------------------------------------------------------------
+	
+	//Method: Click MAIN Menu: PROFILE 
 	public void clickLinkProfile(){
 		lnkMenuProfile.click();
 	}
 	
+
+	//Method: Click Sub Menu: WHO'S VIEWED YOUR PROFILE
+	public void clickSubWhoViewedProfile(WebDriver driver) {
+		//Conditional Loop: Waits for 
+//		while(! lnkMenuProfile.isEnabled()){
+//			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+//		}
+		
+		Actions builder = new Actions(driver);
+		builder.moveToElement(lnkMenuProfile).click().build().perform();
+		lnkViewedProfile.click();
+		
+		// Wait for page to completely load ... how?
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+		
+		
+
+
+	
+// **********	
+	
+	
 	//Method: Click Network Menu: Sub Menu: Connections 
 	public void clickLinkConnections(WebDriver driver){
 		Actions builder = new Actions(driver);
+		//NOTE: This works only if the MAIN Menu is not click-able.
 		builder.moveToElement(lnkMenuNetwork).click().build().perform();
 		lnkSubMenuConnections.click();
 		
@@ -132,8 +175,9 @@ public class pageBaseLinkedIn {
 		builder.moveToElement(lnkMenuNetwork).click().build().perform();
 		lnkSubMenuAddContact.click();
 		
-		// Wait for page to completely load ... how?
+		// Wait for selected page to completely load ... how?
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
 	}
 
 	//Method: Click Menu: Jobs 
@@ -143,16 +187,13 @@ public class pageBaseLinkedIn {
 	
 	//Method: Click Menu: Interests 
 	public void clickLinkInterests(WebDriver driver){
-		while(! lnkMenuInterests.isDisplayed()){
-			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-		}
+//		while(! lnkMenuInterests.isDisplayed()){
+//			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+//		}
 		
 		Actions builder = new Actions(driver);
 		builder.moveToElement(lnkMenuInterests).click().build().perform();	
-		lnkMenuInterests.click();
-		
-		iFlag = true;
-				
+		lnkMenuInterests.click();				
 	}
 	
 	//Method: Click Interests Menu: Companies 
@@ -162,19 +203,28 @@ public class pageBaseLinkedIn {
 	
 	//Method: Click Account-Settings Menu 
 	public void clickLinkMenuSettings(WebDriver driver){
+		while(! lnkMenuSettings.isEnabled()){
+			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+		}
+		
 		Actions builder = new Actions(driver);
 		builder.moveToElement(lnkMenuSettings).click().build().perform();	
 	}
 	
 	//Method: Click Account-Settings Menu -> Sign Out
 	public void clickLinkMenuSettingsSignOut(WebDriver driver){
-		while(! lnkMenuSettings.isDisplayed()){
-			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-		}
+//		while(! lnkMenuSettings.isDisplayed()){
+//			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+//		}
 		
 		Actions builder = new Actions(driver);
 		builder.moveToElement(lnkMenuSettings).click().build().perform();	
 		lnkMenuSettingsSignOut.click();
+		
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
+		// INSERT A BOOL FLAG Here 
+		
 	}
 	
 	

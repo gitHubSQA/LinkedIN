@@ -40,7 +40,7 @@ public class pageCreatePosts {
 	public WebElement txtAreaWriteHeadline;	
 	
 	//Locator Tag: Pill 								- **** To validate
-	@FindBy(name="pill-tagging")
+	@FindBy(id="s2id_autogen1")
 	public WebElement picPillTag;	
 	
 	

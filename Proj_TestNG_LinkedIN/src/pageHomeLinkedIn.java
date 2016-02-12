@@ -7,6 +7,8 @@
 // ---------------------------------------------------------------------------------------------------------------
 
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -64,8 +66,9 @@ public class pageHomeLinkedIn {
 	}
 	
 	//Method: Button Click: Publish a Post 
-	public void clickBtnPublishPost(){
+	public void clickBtnPublishPost(WebDriver driver){
 		btnPublishPost.click();
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 	}
 
 }
