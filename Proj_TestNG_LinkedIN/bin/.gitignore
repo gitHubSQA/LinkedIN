@@ -9,3 +9,11 @@
 /pageProfile.class
 /pageSignOut.class
 /pageSignOutLinkedIn.class
+/pageConnection.class
+/Test_ConnectionPage.class
+/pageWhoViewedProfile.class
+/Test_WhoViewedProfilePage.class
+/pageAddContact.class
+/Test_AddContactPage.class
+/pagePeopleYouKnow.class
+/Test_PeopleYouMayKnowPage.class

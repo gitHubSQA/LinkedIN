@@ -3,15 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="Test_SmokeTest">
+      <class name="Test_PeopleYouMayKnowPage">
         <methods>
-          <include name="openBrowser"/>
-          <include name="POS_Test_SelectConnections"/>
           <include name="displayCounter"/>
-          <include name="POS_Test_SelectInterests"/>
-          <include name="POS_Test_SignOut"/>
+          <include name="POS_Test_PeopleYouMayKnowPage"/>
+          <include name="openBrowser"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- Test_SmokeTest -->
+      </class> <!-- Test_PeopleYouMayKnowPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

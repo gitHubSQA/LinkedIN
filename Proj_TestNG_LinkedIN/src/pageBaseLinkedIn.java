@@ -68,6 +68,10 @@ public class pageBaseLinkedIn {
 	@FindBy(css="a[href*='nav_responsive_sub_nav_add_connections']")
 	public WebElement lnkSubMenuAddContact;	
 	
+	//Locator Sub Menu: People You May Know 
+	@FindBy(css="a[href*='nav_responsive_sub_nav_pymk']")
+	public WebElement lnkSubMenuPeopleYouKNow;	
+	
 	
 	
 	// ********** MAIN MENU: Jobs *****************
@@ -157,6 +161,13 @@ public class pageBaseLinkedIn {
 	
 // **********	
 	
+	//Method: Click Main Menu: My Networks 
+	public void clickMainMyNetworks(WebDriver driver){
+		Actions builder = new Actions(driver);
+		builder.moveToElement(lnkMenuNetwork).click().build().perform();
+		lnkMenuNetwork.click();	
+	}
+	
 	
 	//Method: Click Network Menu: Sub Menu: Connections 
 	public void clickLinkConnections(WebDriver driver){
@@ -176,9 +187,20 @@ public class pageBaseLinkedIn {
 		lnkSubMenuAddContact.click();
 		
 		// Wait for selected page to completely load ... how?
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);	
 	}
+	
+	//Method: Click Network Menu: Sub Menu: Add Contacts 
+	public void clickSubPeopleYouKnow(WebDriver driver){
+		//Actions builder = new Actions(driver);
+		//builder.moveToElement(lnkMenuNetwork).click().build().perform();
+		lnkSubMenuPeopleYouKNow.click();
+		
+		// Wait for selected page to completely load ... how?
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);	
+	}	
+	
+	
 
 	//Method: Click Menu: Jobs 
 	public void clickLinkJobs(){
