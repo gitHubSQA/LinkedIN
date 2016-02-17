@@ -92,7 +92,7 @@ public class Test_ConnectionPage {
 	@Test(priority=1, enabled=true)
 	public void POS_Test_ConnectionsPage() {
 		//STEP 1:
-		pageMenu.clickLinkConnections(driver);
+		pageMenu.clickSubConnections(driver);
 		//VALIDATION: Title
 		Assert.assertEquals(driver.getTitle(), "Contacts | LinkedIn");
 	}

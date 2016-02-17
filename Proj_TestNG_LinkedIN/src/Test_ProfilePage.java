@@ -95,7 +95,7 @@ public class Test_ProfilePage {
 	@Test(priority=1, enabled=true)
 	public void POS_Test_ProfilePage() {
 		//STEP 1:
-		pageMenu.clickLinkProfile();
+		pageMenu.clickLinkProfile(driver);
 		//VALIDATION: Title
 		Assert.assertEquals(driver.getTitle(), "Edit Profile | LinkedIn");
 	}
