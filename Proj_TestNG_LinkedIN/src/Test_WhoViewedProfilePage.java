@@ -59,16 +59,7 @@ public class Test_WhoViewedProfilePage {
 	pageLinkedSignIn pageLogin = new pageLinkedSignIn(driver);
 		
 	//Create an instance of the pageMenuLinkedIn.
-	pageBaseLinkedIn pageMenu = new pageBaseLinkedIn(driver);
-		
-	//Create an instance of the pageMenuLinkedIn.
-//	pageHomeLinkedIn pageHome = new pageHomeLinkedIn(driver);
-	
-	//Create an instance of the pageProfile.
-//	pageProfile pageProfile = new pageProfile(driver);
-		
-	//Create an instance of the pageCreatePosts.
-//	pageCreatePosts pagePost = new pageCreatePosts(driver);	
+	pageBaseLinkedIn pagemenu = new pageBaseLinkedIn(driver);
 		
 	//Create an instance of the pageWhoViewedProfilePage.
 	pageWhoViewedProfile pagewhoviewedprofile = new pageWhoViewedProfile(driver);
@@ -104,7 +95,7 @@ public class Test_WhoViewedProfilePage {
 		@Test(priority=2, enabled=true)
 		public void POS_TEST_SelectWhoViewedProfilePage() {
 			//STEP 1: Select Profile Sub-Menu: Who's Viewed Your Profile
-			pageMenu.clickSubWhoViewedProfile(driver);
+			pagemenu.clickSubWhoViewedProfile(driver);
 			//VALIDATION: Title
 			Assert.assertEquals(driver.getTitle(), "Who's viewed your profile | LinkedIn");
 		}
@@ -128,11 +119,11 @@ public class Test_WhoViewedProfilePage {
 	@AfterClass
 	public void closeBrowser(){
 		//Return to Base State
-		pageMenu.clickLinkMainLogo(driver);
+		pagemenu.clickLinkMainLogo(driver);
 		
 		//Sign Out
-		pageMenu.clickLinkMenuSettings(driver);
-		pageMenu.clickLinkMenuSettingsSignOut(driver);
+		pagemenu.clickLinkMenuSettings(driver);
+		pagemenu.clickLinkMenuSettingsSignOut(driver);
 		Assert.assertEquals(driver.getTitle(), "Signed Out | LinkedIn");
 		
 		//Clean and Close Browser

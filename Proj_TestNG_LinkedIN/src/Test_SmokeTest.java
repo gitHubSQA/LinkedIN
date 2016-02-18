@@ -106,8 +106,8 @@ public class Test_SmokeTest{
 	// VALIDATION: Title Page	
 	@Test (priority=6)
 	public void POS_Test_SelectInterests(){
-		pagemenu.clickLinkInterests(driver);	
-		pagemenu.clickLinkInterestsCompanies(driver);
+		pagemenu.clickMainInterests(driver);	
+		pagemenu.clickSubCompanies(driver);
 		Assert.assertEquals(driver.getTitle(), "Companies | LinkedIn");;
 	}
 

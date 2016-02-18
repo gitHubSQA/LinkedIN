@@ -1,81 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="38372" started-at="2016-02-17T18:22:24Z" finished-at="2016-02-17T18:23:03Z">
+  <suite name="Default suite" duration-ms="55585" started-at="2016-02-18T19:51:25Z" finished-at="2016-02-18T19:52:21Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="38372" started-at="2016-02-17T18:22:24Z" finished-at="2016-02-17T18:23:03Z">
-      <class name="Test_MyNetworksPage">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:Test_MyNetworksPage@1799640]" name="openBrowser" is-config="true" duration-ms="5960" started-at="2016-02-17T13:22:24Z" finished-at="2016-02-17T13:22:30Z">
+    <test name="Default test" duration-ms="55585" started-at="2016-02-18T19:51:25Z" finished-at="2016-02-18T19:52:21Z">
+      <class name="Test_InterestsPage">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:Test_InterestsPage@1799640]" name="openBrowser" is-config="true" duration-ms="6121" started-at="2016-02-18T14:51:25Z" finished-at="2016-02-18T14:51:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="POS_Test_SelectConnections()[pri:0, instance:Test_MyNetworksPage@1799640]" name="POS_Test_SelectConnections" duration-ms="3774" started-at="2016-02-17T13:22:30Z" finished-at="2016-02-17T13:22:34Z">
+        <test-method status="PASS" signature="POS_Test_SelectCompanies()[pri:0, instance:Test_InterestsPage@1799640]" name="POS_Test_SelectCompanies" duration-ms="6461" started-at="2016-02-18T14:51:31Z" finished-at="2016-02-18T14:51:38Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- POS_Test_SelectConnections -->
-        <test-method status="PASS" signature="displayCounter(org.testng.ITestResult)[pri:0, instance:Test_MyNetworksPage@1799640]" name="displayCounter" is-config="true" duration-ms="2709" started-at="2016-02-17T13:22:34Z" finished-at="2016-02-17T13:22:37Z">
+        </test-method> <!-- POS_Test_SelectCompanies -->
+        <test-method status="PASS" signature="displayCounter(org.testng.ITestResult)[pri:0, instance:Test_InterestsPage@1799640]" name="displayCounter" is-config="true" duration-ms="3122" started-at="2016-02-18T14:51:38Z" finished-at="2016-02-18T14:51:41Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=POS_Test_SelectConnections status=SUCCESS method=Test_MyNetworksPage.POS_Test_SelectConnections()[pri:0, instance:Test_MyNetworksPage@1799640] output={null}]]]>
+                <![CDATA[[TestResult name=POS_Test_SelectCompanies status=SUCCESS method=Test_InterestsPage.POS_Test_SelectCompanies()[pri:0, instance:Test_InterestsPage@1799640] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- displayCounter -->
-        <test-method status="PASS" signature="POS_Test_SelectAddContacts()[pri:0, instance:Test_MyNetworksPage@1799640]" name="POS_Test_SelectAddContacts" duration-ms="3988" started-at="2016-02-17T13:22:37Z" finished-at="2016-02-17T13:22:41Z">
+        <test-method status="PASS" signature="POS_Test_SelectGroups()[pri:0, instance:Test_InterestsPage@1799640]" name="POS_Test_SelectGroups" duration-ms="3989" started-at="2016-02-18T14:51:41Z" finished-at="2016-02-18T14:51:45Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- POS_Test_SelectAddContacts -->
-        <test-method status="PASS" signature="displayCounter(org.testng.ITestResult)[pri:0, instance:Test_MyNetworksPage@1799640]" name="displayCounter" is-config="true" duration-ms="2459" started-at="2016-02-17T13:22:41Z" finished-at="2016-02-17T13:22:43Z">
+        </test-method> <!-- POS_Test_SelectGroups -->
+        <test-method status="PASS" signature="displayCounter(org.testng.ITestResult)[pri:0, instance:Test_InterestsPage@1799640]" name="displayCounter" is-config="true" duration-ms="2207" started-at="2016-02-18T14:51:45Z" finished-at="2016-02-18T14:51:47Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=POS_Test_SelectAddContacts status=SUCCESS method=Test_MyNetworksPage.POS_Test_SelectAddContacts()[pri:0, instance:Test_MyNetworksPage@1799640] output={null}]]]>
+                <![CDATA[[TestResult name=POS_Test_SelectGroups status=SUCCESS method=Test_InterestsPage.POS_Test_SelectGroups()[pri:0, instance:Test_InterestsPage@1799640] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- displayCounter -->
-        <test-method status="PASS" signature="POS_Test_SelectPeopleYouKnow()[pri:0, instance:Test_MyNetworksPage@1799640]" name="POS_Test_SelectPeopleYouKnow" duration-ms="2991" started-at="2016-02-17T13:22:43Z" finished-at="2016-02-17T13:22:46Z">
+        <test-method status="PASS" signature="POS_Test_SelectPulse()[pri:0, instance:Test_InterestsPage@1799640]" name="POS_Test_SelectPulse" duration-ms="3787" started-at="2016-02-18T14:51:47Z" finished-at="2016-02-18T14:51:51Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- POS_Test_SelectPeopleYouKnow -->
-        <test-method status="PASS" signature="displayCounter(org.testng.ITestResult)[pri:0, instance:Test_MyNetworksPage@1799640]" name="displayCounter" is-config="true" duration-ms="3006" started-at="2016-02-17T13:22:46Z" finished-at="2016-02-17T13:22:49Z">
+        </test-method> <!-- POS_Test_SelectPulse -->
+        <test-method status="PASS" signature="displayCounter(org.testng.ITestResult)[pri:0, instance:Test_InterestsPage@1799640]" name="displayCounter" is-config="true" duration-ms="2284" started-at="2016-02-18T14:51:51Z" finished-at="2016-02-18T14:51:53Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=POS_Test_SelectPeopleYouKnow status=SUCCESS method=Test_MyNetworksPage.POS_Test_SelectPeopleYouKnow()[pri:0, instance:Test_MyNetworksPage@1799640] output={null}]]]>
+                <![CDATA[[TestResult name=POS_Test_SelectPulse status=SUCCESS method=Test_InterestsPage.POS_Test_SelectPulse()[pri:0, instance:Test_InterestsPage@1799640] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- displayCounter -->
-        <test-method status="PASS" signature="POS_Test_SelectFindAlumni()[pri:0, instance:Test_MyNetworksPage@1799640]" name="POS_Test_SelectFindAlumni" duration-ms="3580" started-at="2016-02-17T13:22:49Z" finished-at="2016-02-17T13:22:53Z">
+        <test-method status="PASS" signature="POS_Test_SelectEducation()[pri:0, instance:Test_InterestsPage@1799640]" name="POS_Test_SelectEducation" duration-ms="3989" started-at="2016-02-18T14:51:53Z" finished-at="2016-02-18T14:51:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- POS_Test_SelectFindAlumni -->
-        <test-method status="PASS" signature="displayCounter(org.testng.ITestResult)[pri:0, instance:Test_MyNetworksPage@1799640]" name="displayCounter" is-config="true" duration-ms="3766" started-at="2016-02-17T13:22:53Z" finished-at="2016-02-17T13:22:57Z">
+        </test-method> <!-- POS_Test_SelectEducation -->
+        <test-method status="PASS" signature="displayCounter(org.testng.ITestResult)[pri:0, instance:Test_InterestsPage@1799640]" name="displayCounter" is-config="true" duration-ms="2527" started-at="2016-02-18T14:51:57Z" finished-at="2016-02-18T14:52:00Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=POS_Test_SelectFindAlumni status=SUCCESS method=Test_MyNetworksPage.POS_Test_SelectFindAlumni()[pri:0, instance:Test_MyNetworksPage@1799640] output={null}]]]>
+                <![CDATA[[TestResult name=POS_Test_SelectEducation status=SUCCESS method=Test_InterestsPage.POS_Test_SelectEducation()[pri:0, instance:Test_InterestsPage@1799640] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- displayCounter -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:Test_MyNetworksPage@1799640]" name="closeBrowser" is-config="true" duration-ms="6119" started-at="2016-02-17T13:22:57Z" finished-at="2016-02-17T13:23:03Z">
+        <test-method status="PASS" signature="POS_Test_SelectSlideShare()[pri:0, instance:Test_InterestsPage@1799640]" name="POS_Test_SelectSlideShare" duration-ms="3593" started-at="2016-02-18T14:52:00Z" finished-at="2016-02-18T14:52:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- POS_Test_SelectSlideShare -->
+        <test-method status="PASS" signature="displayCounter(org.testng.ITestResult)[pri:0, instance:Test_InterestsPage@1799640]" name="displayCounter" is-config="true" duration-ms="2200" started-at="2016-02-18T14:52:03Z" finished-at="2016-02-18T14:52:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=POS_Test_SelectSlideShare status=SUCCESS method=Test_InterestsPage.POS_Test_SelectSlideShare()[pri:0, instance:Test_InterestsPage@1799640] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- displayCounter -->
+        <test-method status="PASS" signature="POS_Test_SelectOnlineLearning()[pri:0, instance:Test_InterestsPage@1799640]" name="POS_Test_SelectOnlineLearning" duration-ms="4864" started-at="2016-02-18T14:52:05Z" finished-at="2016-02-18T14:52:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- POS_Test_SelectOnlineLearning -->
+        <test-method status="PASS" signature="displayCounter(org.testng.ITestResult)[pri:0, instance:Test_InterestsPage@1799640]" name="displayCounter" is-config="true" duration-ms="2446" started-at="2016-02-18T14:52:10Z" finished-at="2016-02-18T14:52:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=POS_Test_SelectOnlineLearning status=SUCCESS method=Test_InterestsPage.POS_Test_SelectOnlineLearning()[pri:0, instance:Test_InterestsPage@1799640] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- displayCounter -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:Test_InterestsPage@1799640]" name="closeBrowser" is-config="true" duration-ms="7959" started-at="2016-02-18T14:52:13Z" finished-at="2016-02-18T14:52:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- Test_MyNetworksPage -->
+      </class> <!-- Test_InterestsPage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

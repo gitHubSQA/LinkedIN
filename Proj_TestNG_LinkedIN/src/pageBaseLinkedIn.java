@@ -7,6 +7,7 @@
 // Last Update:    Added function to hover over Main Menu: My Network and click Sub-Menu: Connections
 // ---------------------------------------------------------------------------------------------------------------
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -35,25 +36,25 @@ public class pageBaseLinkedIn {
 	
 	//Locator Logo: LinkedIn Logo 
 	@FindBy(id="in-logo")
-	public WebElement lnkMainLogo;
+	private WebElement lnkMainLogo;
 	
 	//Locator Menu: Home 
 	@FindBy(css="a[href*='nav_responsive_tab_home']")
-	public WebElement lnkMenuHome;
+	protected WebElement lnkMenuHome;
 	
 	// ********** MAIN MENU: Profile *****************
 	
 	//Locator MAIN Menu: Profile 
 	@FindBy(css="a[href*='nav_responsive_tab_profile']")
-	public WebElement lnkMenuProfile;
+	private WebElement lnkMenuProfile;
 	
 	//Locator SUB-Menu: Edit Profile 
 	@FindBy(css="a[href*='nav_responsive_sub_nav_edit_profile']")
-	public WebElement lnkSubMenuEditProfile;
+	private WebElement lnkSubMenuEditProfile;
 	
 	//Locator SUB-Menu: Who's Viewed Your Profile
 	@FindBy(css="a[href*='nav_responsive_sub_nav_wvmp']")
-	public WebElement lnkViewedProfile;	
+	private WebElement lnkViewedProfile;	
 
 	// -----------------------------------------------------------------------------------------------------------------------------------------
 	// -------------------------------- MY NETWORK ---------------------------------------------------------------------------------------------
@@ -61,23 +62,23 @@ public class pageBaseLinkedIn {
 
 	//Locator MAIN Menu: My Network 
 	@FindBy(id="nav-link-network")
-	public WebElement lnkMenuNetwork;	
+	private WebElement lnkMenuNetwork;	
 	
 	//Locator SUB-Menu: Connections 
 	@FindBy(css="a[href*='nav_responsive_sub_nav_network']")
-	public WebElement lnkSubMenuConnections;	
+	private WebElement lnkSubMenuConnections;	
 	
 	//Locator Sub Menu: Add Contacts 
 	@FindBy(css="a[href*='nav_responsive_sub_nav_add_connections']")
-	public WebElement lnkSubMenuAddContact;	
+	private WebElement lnkSubMenuAddContact;	
 	
 	//Locator Sub Menu: People You May Know 
 	@FindBy(css="a[href*='nav_responsive_sub_nav_pymk']")
-	public WebElement lnkSubMenuPeopleYouKnow;	
+	private WebElement lnkSubMenuPeopleYouKnow;	
 	
 	//Locator Sub Menu: Find Alumni 
 	@FindBy(css="a[href*='nav_responsive_sub_nav_find_alumni']")
-	public WebElement lnkSubMenuFindAlumni;	
+	private WebElement lnkSubMenuFindAlumni;	
 	
 	
 	// -----------------------------------------------------------------------------------------------------------------------------------------
@@ -86,7 +87,7 @@ public class pageBaseLinkedIn {
 
 	//Locator Menu: Jobs
 	@FindBy(css="a[href*='nav_responsive_sub_nav_jobs']")
-	public WebElement lnkMenuJobs;		
+	private WebElement lnkMenuJobs;		
 		
 
 
@@ -96,12 +97,31 @@ public class pageBaseLinkedIn {
 	
 	//Locator Menu: Interests 
 	@FindBy(id="nav-link-interests")
-	public WebElement lnkMenuInterests;	
+	private WebElement lnkMenuInterests;	
 
 	//Locator Interest Sub Menu: Companies  
 	@FindBy(css="a[href*='nav_responsive_sub_nav_companies']")
-	public WebElement lnkMenuInterestsCompanies;	
+	private WebElement lnkMenuInterestsCompanies;
 	
+	//Locator Interest Sub Menu: Groups  
+	@FindBy(css="a[href*='nav_responsive_sub_nav_groups']")
+	private WebElement lnkMenuInterestsGroups;
+	
+	//Locator Interest Sub Menu: Pulse  
+	@FindBy(css="a[href*='nav_responsive_sub_nav_pulse']")
+	private WebElement lnkMenuInterestsPulse;
+	
+	//Locator Interest Sub Menu: Education  
+	@FindBy(css="a[href*='nav_responsive_sub_nav_edu']")
+	private WebElement lnkMenuInterestsEducation;
+	
+	//Locator Interest Sub Menu: SlideShare  
+	@FindBy(css="a[href*='nav_responsive_sub_nav_slideshare']")
+	private WebElement lnkMenuInterestsSlideShare;
+	
+	//Locator Interest Sub Menu: Online Learning
+	@FindBy(css="a[href*='nav_responsive_sub_nav_lynda']")
+	private WebElement lnkMenuInterestsOnlineLearning;
 	
 	
 	// -----------------------------------------------------------------------------------------------------------------------------------------
@@ -110,11 +130,11 @@ public class pageBaseLinkedIn {
 	
     //Locator Menu: Account-Settings Main Menu  
 	@FindBy(css="a[href*='nav_responsive_tab_profile_pic']")
-	public WebElement lnkMenuSettings;	
+	private WebElement lnkMenuSettings;	
 
 	//Locator Menu: Account-Settings Sign Out Menu  
 	@FindBy(css="a[href*='nav_account_sub_nav_signout']")
-	public WebElement lnkMenuSettingsSignOut;	
+	private WebElement lnkMenuSettingsSignOut;	
 
 	
 	
@@ -126,7 +146,7 @@ public class pageBaseLinkedIn {
 	// Step 1: Condition: Logo is enabled on the screen	
 	// Step 2: Click on the main logo
 	// Step 3: Wait for 5 Seconds (temporary sync solution)
-		public void clickLinkMainLogo(WebDriver driver){
+	protected void clickLinkMainLogo(WebDriver driver){
 			while (! lnkMainLogo.isEnabled()){	
 				driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 			}
@@ -138,7 +158,7 @@ public class pageBaseLinkedIn {
 	// Step 1: Condition: Home link is displayed on the screen	
 	// Step 2: Click Main Menu: Home
 	// Step 3: Wait for 5 Seconds (temporary sync solution)
-	public void clickLinkMenuHome(WebDriver driver){
+	protected void clickLinkMenuHome(WebDriver driver){
 		while (! lnkMenuHome.isDisplayed()){	
 			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		}		
@@ -151,14 +171,14 @@ public class pageBaseLinkedIn {
 	//------------------------------------------------------------------------------------------------------------
 	
 	//Method: Click MAIN Menu: PROFILE 
-	public void clickLinkProfile(WebDriver driver){
+	protected void clickLinkProfile(WebDriver driver){
 		Actions builder = new Actions(driver);
 		builder.moveToElement(lnkMenuProfile).click().build().perform();
 		lnkMenuProfile.click();
 	}
 
 	//Method: Click Sub Menu: WHO'S VIEWED YOUR PROFILE
-	public void clickSubWhoViewedProfile(WebDriver driver) {
+	protected void clickSubWhoViewedProfile(WebDriver driver) {
 		lnkViewedProfile.click();	
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
@@ -176,7 +196,7 @@ public class pageBaseLinkedIn {
 	// Step 1: New instance of Class Action
 	// Step 2: Move to specified element, then click
 	// Step 3: Click Link
-	public void clickMainMyNetworks(WebDriver driver){
+	protected void clickMainMyNetworks(WebDriver driver){
 		Actions builder = new Actions(driver);
 		builder.moveToElement(lnkMenuNetwork).click().build().perform();
 		lnkMenuNetwork.click();	
@@ -185,7 +205,7 @@ public class pageBaseLinkedIn {
 	// Method: Click Network Menu: Sub Menu: Connections
 	// Step 1: Click Link
 	// Step 2: Wait for 5 Seconds (temporary sync solution)
-	public void clickSubConnections(WebDriver driver){
+	protected void clickSubConnections(WebDriver driver){
 		lnkSubMenuConnections.click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
@@ -193,7 +213,7 @@ public class pageBaseLinkedIn {
 	// Method: Click Network Menu: Sub Menu: Add Contacts 
 	// Step 1: Click Link
 	// Step 2: Wait for 5 Seconds (temporary sync solution)
-	public void clickSubAddContact(WebDriver driver){
+	protected void clickSubAddContact(WebDriver driver){
 		lnkSubMenuAddContact.click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);	
 	}
@@ -201,7 +221,7 @@ public class pageBaseLinkedIn {
 	// Method: Click Network Menu: Sub Menu: People You May Know
 	// Step 1: Click Link
 	// Step 2: Wait for 5 Seconds (temporary sync solution )
-	public void clickSubPeopleYouKnow(WebDriver driver){
+	protected void clickSubPeopleYouKnow(WebDriver driver){
 		lnkSubMenuPeopleYouKnow.click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);	
 	}	
@@ -209,7 +229,7 @@ public class pageBaseLinkedIn {
 	// Method: Click Network Menu: Sub Menu: Find Alumni
 	// Step 1: Click Link
 	// Step 2: Wait for 5 Seconds (temporary sync solution)
-	public void clickSubFindAlumni(WebDriver driver){
+	protected void clickSubFindAlumni(WebDriver driver){
 		lnkSubMenuFindAlumni.click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);	
 	}		
@@ -221,27 +241,106 @@ public class pageBaseLinkedIn {
 	// Method: Click Main Menu: Jobs
 	// Step 1: Click Link
 	// Step 2: Wait for 5 Seconds (temporary sync solution)
-	public void clickLinkJobs(WebDriver driver){
+	protected void clickLinkJobs(WebDriver driver){
 		lnkMenuJobs.click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
 	
+	
+	//------------------------------------------------------------------------------------------------------------
+	// MAIN MENU: INTERESTS
+	//------------------------------------------------------------------------------------------------------------
+	
 	//Method: Click Menu: Interests 
 	// Step 1: Click Link
 	// Step 2: Wait for 5 Seconds (temporary sync solution)
-	public void clickLinkInterests(WebDriver driver){		
+	protected void clickMainInterests(WebDriver driver){
+		Actions builder = new Actions(driver);
+		builder.moveToElement(lnkMenuInterests).click().build().perform();	
 		lnkMenuInterests.click();				
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
 	
 	//Method: Click Interests Menu: Companies 
 	// Step 1: Click Link
 	// Step 2: Wait for 5 Seconds (temporary sync solution)
-	public void clickLinkInterestsCompanies(WebDriver driver){
-			lnkMenuInterestsCompanies.click();
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	protected void clickSubCompanies(WebDriver driver){
+		lnkMenuInterestsCompanies.click();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
 	
+	//Method: Click Interests Menu: Groups 
+	// Step 1: Click Link
+	// Step 2: Wait for 5 Seconds (temporary sync solution)
+	protected void clickSubGroups(WebDriver driver){
+		lnkMenuInterestsGroups.click();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	}
+	
+	//Method: Click Interests Menu: Pulse 
+	// Step 1: Click Link
+	// Step 2: Wait for 5 Seconds (temporary sync solution)
+	protected void clickSubPulse(WebDriver driver){
+		lnkMenuInterestsPulse.click();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	}
+	
+	//Method: Click Interests Menu: Education 
+	// Step 1: Click Link
+	// Step 2: Wait for 5 Seconds (temporary sync solution)
+	protected void clickSubEducation(WebDriver driver){
+		lnkMenuInterestsEducation.click();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	}
+	
+	//Method: Click Interests Menu: SlideShare 
+	// Step 1: Click Link
+	// Step 2: Wait for 5 Seconds (temporary sync solution)
+	// Step 3: Switch to New Window and extract the Page Title 
+	// Step 4: Close the New Window
+	// Step 5: Switch back to the Main Window
+	// Step 6: Return the New Window's Title 
+	protected String clickSubSlideShare(WebDriver driver){
+		lnkMenuInterestsSlideShare.click();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+		String winMainHandle = driver.getWindowHandle();
+		String winNewHandleTitle = "";
+        for(String winHandle : driver.getWindowHandles()){
+            driver.switchTo().window(winHandle);
+            winNewHandleTitle = driver.getTitle();
+        }
+        
+        driver.close();
+     
+        driver.switchTo().window(winMainHandle);
+        
+        return winNewHandleTitle;
+	}
+	
+	//Method: Click Interests Menu: Online Learning 
+	// Step 1: Click Link
+	// Step 2: Wait for 5 Seconds (temporary sync solution)
+	// Step 3: Switch to New Window and extract the Page Title 
+	// Step 4: Close the New Window
+	// Step 5: Switch back to the Main Window
+	// Step 6: Return the New Window's Title 
+	protected String clickSubOnlineLearning(WebDriver driver){
+		lnkMenuInterestsOnlineLearning.click();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
+		String winMainHandle = driver.getWindowHandle();
+		String winNewHandleTitle = "";
+        for(String winHandle : driver.getWindowHandles()){
+            driver.switchTo().window(winHandle);
+            winNewHandleTitle = driver.getTitle();
+        }
+        
+        driver.close();
+     
+        driver.switchTo().window(winMainHandle);
+        
+        return winNewHandleTitle;
+	}
 	
 	//------------------------------------------------------------------------------------------------------------
 	// MAIN MENU: ACCOUNT-SETTINGS
@@ -249,7 +348,7 @@ public class pageBaseLinkedIn {
 	
 	// Method: Account-Settings Menu 
 	// Step 1: Click Account-Settings
-	public void clickLinkMenuSettings(WebDriver driver){
+	protected void clickLinkMenuSettings(WebDriver driver){
 		while(! lnkMenuSettings.isEnabled()){
 			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		}		
@@ -261,7 +360,7 @@ public class pageBaseLinkedIn {
 	// Method: Click Account-Settings Menu -> Sign Out
 	// Step 1: Click Sign Out
 	// Step 2: Wait for 5 Seconds (temporary sync solution)	
-	public void clickLinkMenuSettingsSignOut(WebDriver driver){
+	protected void clickLinkMenuSettingsSignOut(WebDriver driver){
 		lnkMenuSettingsSignOut.click();		
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
