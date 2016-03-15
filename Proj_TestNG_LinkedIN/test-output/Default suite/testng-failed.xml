@@ -9,6 +9,7 @@
           <include name="displayCounter"/>
           <include name="openBrowser"/>
           <include name="POS_Test_SelectOnlineLearning"/>
+          <include name="POS_Test_SelectPulse"/>
         </methods>
       </class> <!-- Test_InterestsPage -->
     </classes>

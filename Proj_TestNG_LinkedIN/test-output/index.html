@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\jdenny\AppData\Local\Temp\testng-eclipse-1036122384\testng-customsuite.xml</span>
+                    <span>C:\Users\jdenny\AppData\Local\Temp\testng-eclipse-582131041\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,   6 passed</span>
+                    <span class="method-stats">6 methods, 2 failed,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Test_InterestsPage" hash-for-method="POS_Test_SelectOnlineLearning">POS_Test_SelectOnlineLearning</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Test_InterestsPage" hash-for-method="POS_Test_SelectPulse">POS_Test_SelectPulse</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -116,16 +135,6 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Test_InterestsPage" hash-for-method="POS_Test_SelectOnlineLearning">POS_Test_SelectOnlineLearning</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Test_InterestsPage" hash-for-method="POS_Test_SelectPulse">POS_Test_SelectPulse</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Test_InterestsPage" hash-for-method="POS_Test_SelectSlideShare">POS_Test_SelectSlideShare</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -141,6 +150,94 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">Test_InterestsPage</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="POS_Test_SelectOnlineLearning">
+                  </a> <!-- POS_Test_SelectOnlineLearning -->
+                  <span class="method-name">POS_Test_SelectOnlineLearning</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Online Video Tutorials &amp; Training at Lynda.com] but found [Online Video Tutorials &amp; Training | Lynda.com]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertEquals(Assert.java:125)
+	at org.testng.Assert.assertEquals(Assert.java:178)
+	at org.testng.Assert.assertEquals(Assert.java:188)
+	at Test_InterestsPage.POS_Test_SelectOnlineLearning(Test_InterestsPage.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="POS_Test_SelectPulse">
+                  </a> <!-- POS_Test_SelectPulse -->
+                  <span class="method-name">POS_Test_SelectPulse</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Is Uber redefining the work week? | Olivia Barrow | LinkedIn] but found [What’s Next, Mr Vijay Mallya? | Tamal Bandyopadhyay | LinkedIn]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertEquals(Assert.java:125)
+	at org.testng.Assert.assertEquals(Assert.java:178)
+	at org.testng.Assert.assertEquals(Assert.java:188)
+	at Test_InterestsPage.POS_Test_SelectPulse(Test_InterestsPage.java:107)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -170,20 +267,6 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="POS_Test_SelectOnlineLearning">
-                  </a> <!-- POS_Test_SelectOnlineLearning -->
-                  <span class="method-name">POS_Test_SelectOnlineLearning</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="POS_Test_SelectPulse">
-                  </a> <!-- POS_Test_SelectPulse -->
-                  <span class="method-name">POS_Test_SelectPulse</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="POS_Test_SelectSlideShare">
                   </a> <!-- POS_Test_SelectSlideShare -->
                   <span class="method-name">POS_Test_SelectSlideShare</span>
@@ -194,7 +277,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\jdenny\AppData\Local\Temp\testng-eclipse-1036122384\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\jdenny\AppData\Local\Temp\testng-eclipse-582131041\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -245,34 +328,34 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'POS_Test_SelectCompanies')
+data.setCell(0, 1, 'POS_Test_SelectEducation')
 data.setCell(0, 2, 'Test_InterestsPage')
-data.setCell(0, 3, 6461);
+data.setCell(0, 3, 11625);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'POS_Test_SelectOnlineLearning')
+data.setCell(1, 1, 'POS_Test_SelectCompanies')
 data.setCell(1, 2, 'Test_InterestsPage')
-data.setCell(1, 3, 4864);
+data.setCell(1, 3, 11542);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'POS_Test_SelectGroups')
+data.setCell(2, 1, 'POS_Test_SelectSlideShare')
 data.setCell(2, 2, 'Test_InterestsPage')
-data.setCell(2, 3, 3989);
+data.setCell(2, 3, 9425);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'POS_Test_SelectEducation')
+data.setCell(3, 1, 'POS_Test_SelectOnlineLearning')
 data.setCell(3, 2, 'Test_InterestsPage')
-data.setCell(3, 3, 3989);
+data.setCell(3, 3, 9376);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'POS_Test_SelectPulse')
 data.setCell(4, 2, 'Test_InterestsPage')
-data.setCell(4, 3, 3787);
+data.setCell(4, 3, 7509);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'POS_Test_SelectSlideShare')
+data.setCell(5, 1, 'POS_Test_SelectGroups')
 data.setCell(5, 2, 'Test_InterestsPage')
-data.setCell(5, 3, 3593);
+data.setCell(5, 3, 4917);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 26 seconds</span>
+              <span class="suite-total-time">Total running time: 54 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -305,55 +388,59 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">POS_Test_SelectCompanies</span>
-                <span class="method-start">6136 ms</span>
+                <span class="method-start">9397 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">displayCounter([TestResult name=POS_Test_SelectCompanies status=SUCCESS method=Test_InterestsPage.POS_Test_SelectCo...)</span>
-                <span class="method-start">12597 ms</span>
+                <span class="method-start">20941 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">POS_Test_SelectGroups</span>
-                <span class="method-start">15719 ms</span>
+                <span class="method-start">23977 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">displayCounter([TestResult name=POS_Test_SelectGroups status=SUCCESS method=Test_InterestsPage.POS_Test_SelectGroup...)</span>
-                <span class="method-start">19709 ms</span>
+                <span class="method-start">28894 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">POS_Test_SelectPulse</span>
-                <span class="method-start">21916 ms</span>
+                <span class="method-start">31175 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">displayCounter([TestResult name=POS_Test_SelectPulse status=SUCCESS method=Test_InterestsPage.POS_Test_SelectPulse(...)</span>
-                <span class="method-start">25704 ms</span>
+                <span class="method-name">displayCounter([TestResult name=POS_Test_SelectPulse status=FAILURE method=Test_InterestsPage.POS_Test_SelectPulse(...)</span>
+                <span class="method-start">38687 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">POS_Test_SelectEducation</span>
-                <span class="method-start">27988 ms</span>
+                <span class="method-start">46826 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">displayCounter([TestResult name=POS_Test_SelectEducation status=SUCCESS method=Test_InterestsPage.POS_Test_SelectEd...)</span>
-                <span class="method-start">31977 ms</span>
+                <span class="method-start">58452 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">POS_Test_SelectSlideShare</span>
-                <span class="method-start">34506 ms</span>
+                <span class="method-start">61826 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">displayCounter([TestResult name=POS_Test_SelectSlideShare status=SUCCESS method=Test_InterestsPage.POS_Test_SelectS...)</span>
-                <span class="method-start">38100 ms</span>
+                <span class="method-start">71251 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">POS_Test_SelectOnlineLearning</span>
-                <span class="method-start">40300 ms</span>
+                <span class="method-start">74623 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">displayCounter([TestResult name=POS_Test_SelectOnlineLearning status=SUCCESS method=Test_InterestsPage.POS_Test_Sel...)</span>
-                <span class="method-start">45165 ms</span>
+                <span class="method-name">displayCounter([TestResult name=POS_Test_SelectOnlineLearning status=FAILURE method=Test_InterestsPage.POS_Test_Sel...)</span>
+                <span class="method-start">84000 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">47611 ms</span>
+                <span class="method-start">91214 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
