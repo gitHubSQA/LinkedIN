@@ -15,6 +15,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class pageBaseLinkedIn {
@@ -142,6 +144,23 @@ public class pageBaseLinkedIn {
 	// -------------------------------- METHODS ------------------------------------------------------------------------------------------------
 	// -----------------------------------------------------------------------------------------------------------------------------------------
 	
+	
+	/**
+	 * A custom method to explicitly wait a user-specified WebElement to become visible before doing any actions.
+	 * @param driver
+	 * @param elementUT
+	 * @return
+	 */
+	public Boolean explicitWaitCustom(WebDriver driver, WebElement elementUT) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, 10);
+		if (explicitWait.until(ExpectedConditions.visibilityOf(elementUT)) != null){
+			return true;
+		} else {
+		return false;
+		}
+	}
+	
+	
 	// Method: Logo 
 	// Step 1: Condition: Logo is enabled on the screen	
 	// Step 2: Click on the main logo
@@ -264,8 +283,14 @@ public class pageBaseLinkedIn {
 	// Step 1: Click Link
 	// Step 2: Wait for 5 Seconds (temporary sync solution)
 	protected void clickSubCompanies(WebDriver driver){
-		lnkMenuInterestsCompanies.click();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		pageCompanies pgCompanies = new pageCompanies(driver);
+		
+		explicitWaitCustom(driver, lnkMenuInterestsCompanies);
+		lnkMenuInterestsCompanies.click();		
+		
+		//explicitWaitCustom(driver, pgCompanies.btnCreateCompanyPage);
+		//pgCompanies.clickBtnCreateCompanyPage();
+		
 	}
 	
 	//Method: Click Interests Menu: Groups 
